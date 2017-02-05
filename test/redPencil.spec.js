@@ -9,7 +9,7 @@ describe("isRedPencilDiscount", function(){
         expect(discountTracker.isRedPencilDiscount(originalPrice, reducedPrice)).toBe(true);
     });
 
-    it("reduces price by less than five precent returns false", function(){
+    it("reduces price by less than five percent returns false", function(){
         var originalPrice  = 100;
         var reducedPrice = 99;
         var discountTracker = new DiscountTracker();
@@ -17,11 +17,28 @@ describe("isRedPencilDiscount", function(){
         expect(discountTracker.isRedPencilDiscount(originalPrice, reducedPrice)).toBe(false);
     });
 
-    it("reduces price by five precent return true", function(){
+    it("reduces price by five percent return true", function(){
        var originalPrice = 100;
        var reducedPrice = 95;
        var discountTracker = new DiscountTracker();
 
        expect(discountTracker.isRedPencilDiscount(originalPrice, reducedPrice)).toBe(true);
+    });
+    
+    it("reduces price by less than thirty percent returns true", function(){
+        var originalPrice = 100;
+        var reducedPrice = 75;
+        var discountTracker = new DiscountTracker();
+
+        expect(discountTracker.isRedPencilDiscount(originalPrice,reducedPrice)).toBe(true);
+    });
+
+    it("reduces price by more than thrity precent returns false", function()
+    {
+        var originalPrice = 100;
+        var reducedPrice = 40;
+        var discountTracker = new DiscountTracker();
+
+        expect(discountTracker.isRedPencilDiscount(originalPrice, reducedPrice)).toBe(false);
     });
 });
