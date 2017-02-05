@@ -41,4 +41,12 @@ describe("isRedPencilDiscount", function(){
 
         expect(discountTracker.isRedPencilDiscount(originalPrice, reducedPrice)).toBe(false);
     });
+
+    it("reduces price by thirty percent returns true", function () {
+        var originalPrice = 100;
+        var reducedPrice = 70;
+        var discountTracker = new DiscountTracker();
+
+        expect(discountTracker.isRedPencilDiscount(originalPrice, reducedPrice)).toBe(true);
+    });
 });
