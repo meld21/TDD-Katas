@@ -1,5 +1,5 @@
 function DiscountTracker() {
     this.isRedPencilDiscount = function(originalPrice, reducedPrice) {
-        return true;
+        return originalPrice*.95 >= reducedPrice;
     };
 };
