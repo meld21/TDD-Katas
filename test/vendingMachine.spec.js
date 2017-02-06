@@ -50,5 +50,11 @@ describe("adds an inserted coins value to the current amount", function(){
        vendingMachine.insertCoin("dime");
        expect(vendingMachine.currentAmount).toBe(1.10);
     });
+    it("adds .1 when dime inserted currentAmount .1", function(){
+        var coin = "dime";
+        var vendingMachine = new VendingMachine();
+        vendingMachine.insertCoin(coin);
+        expect(vendingMachine.currentAmount).toBe(.1);
+    });
 
 });
