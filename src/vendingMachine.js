@@ -16,6 +16,6 @@ function VendingMachine(){
         if( coin == "dime" )
             this.currentAmount += .1;
         if( coin == "nickel" )
-            this.currentAmount = .05;
+            this.currentAmount += .05;
     };
 }
