@@ -1,6 +1,8 @@
 function VendingMachine(){
 
     this.currentAmount = 0;
+    this.displayMessage = "Insert Coin";
+
     this.acceptCoin = function(coin){
 
         if(coin == "quarter" || coin == "nickel" || coin == "dime")
