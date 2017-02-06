@@ -69,5 +69,11 @@ describe("adds an inserted coins value to the current amount", function(){
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(1.05);
     });
+    it("adds nothing when invalid penny is inserted currentAmount 0", function(){
+       var coin = "penny";
+       var vendingMachine = new VendingMachine();
+       vendingMachine.insertCoin(coin);
+       expect(vendingMachine.currentAmount).toBe(0);
+    });
 
 });
