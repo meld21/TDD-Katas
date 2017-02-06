@@ -1,10 +1,8 @@
 function VendingMachine(){
 
     this.currentAmount = 0;
-    this.displayMessage = "Insert Coin";
 
     this.acceptCoin = function(coin){
-
         if(coin == "quarter" || coin == "nickel" || coin == "dime")
         {
             return true;
@@ -19,5 +17,13 @@ function VendingMachine(){
             this.currentAmount += .1;
         if( coin == "nickel" )
             this.currentAmount += .05;
+    };
+
+    this.displayMessage = function(){
+        if( this.currentAmount == 0 )
+            return "Insert Coin";
+        else
+            return this.currentAmount.toString();
+
     };
 }
