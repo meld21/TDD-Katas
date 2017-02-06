@@ -25,3 +25,13 @@ describe("accepts only valid coins", function(){
     });
 
 });
+
+describe("adds an inserted coins value to the current amount", function(){
+
+    it("adds .25 when quarter inserted return .25", function(){
+       var coin = "quarter";
+       var vendingMachine = new VendingMachine();
+       vendingMachine.insertCoin(coin);
+       expect(vendingMachine.currentAmount).toBe(.25);
+    });
+});
