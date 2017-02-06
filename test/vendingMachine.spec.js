@@ -17,4 +17,11 @@ describe("accepts only valid coins", function(){
         var vendingMachine = new VendingMachine();
         expect(vendingMachine.acceptCoin(coin)).toBe(true);
     });
+    it("accepts dimes returns true", function(){
+
+        var coin = "dime";
+        var vendingMachine = new VendingMachine();
+        expect(vendingMachine.acceptCoin(coin)).toBe(true);
+    });
+
 });
