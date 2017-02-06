@@ -11,6 +11,6 @@ function VendingMachine(){
     };
 
     this.insertCoin = function(coin){
-        this.currentAmount = .25;
+        this.currentAmount += .25;
     };
 }
