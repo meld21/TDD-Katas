@@ -73,12 +73,15 @@ describe("adds an inserted coin's value to the current amount", function(){
        expect(vendingMachine.currentAmount).toBe(0);
     });
 describe("messaged displays current amount or 'Insert Coin' when current amount = 0 displayMessage 'Insert Coin'", function(){
+
+    var vendingMachine;
+    beforeEach(function(){
+        vendingMachine = new VendingMachine();
+    });
     it("displays 'Insert Coin' when current amount is 0 displayMessage 'Insert Coin'", function(){
-        var vendingMachine = new VendingMachine();
         expect(vendingMachine.displayMessage()).toBe("Insert Coin");
     });
     it("displays current amount when current amount != 0 displayMessage '1.35'", function(){
-        var vendingMachine = new VendingMachine();
         vendingMachine.currentAmount = 1.35;
         expect(vendingMachine.displayMessage()).toBe("1.35");
     });
