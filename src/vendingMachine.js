@@ -2,7 +2,7 @@ function VendingMachine(){
 
     this.acceptCoin = function(coin){
 
-        if(coin == "quarter")
+        if(coin == "quarter" || coin == "nickel")
         {
             return true;
         }

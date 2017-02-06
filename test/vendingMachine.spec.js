@@ -11,4 +11,10 @@ describe("accepts only valid coins", function(){
         var vendingMachine = new VendingMachine();
         expect(vendingMachine.acceptCoin(coin)).toBe(false);
     });
+    it("accepts nickels return true", function()
+    {
+        var coin = "nickel";
+        var vendingMachine = new VendingMachine();
+        expect(vendingMachine.acceptCoin(coin)).toBe(true);
+    });
 });
