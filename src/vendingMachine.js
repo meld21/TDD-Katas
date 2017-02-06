@@ -11,6 +11,9 @@ function VendingMachine(){
     };
 
     this.insertCoin = function(coin){
-        this.currentAmount += .25;
+        if( coin == "quarter")
+            this.currentAmount += .25;
+        if( coin == "dime" )
+            this.currentAmount = 1.1;
     };
 }

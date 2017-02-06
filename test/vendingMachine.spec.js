@@ -36,11 +36,19 @@ describe("adds an inserted coins value to the current amount", function(){
     });
 
     it("adds .25 when quarter inserted currentAmount 1.25", function(){
-        var coin = "dime";
+        var coin = "quarter";
         var vendingMachine = new VendingMachine();
         vendingMachine.currentAmount = 1;
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(1.25);
 
     });
+    it("add .1 when dime inserted currentAmount 1.10", function(){
+       var coin = "dime";
+       var vendingMachine = new VendingMachine();
+       vendingMachine.currentAmount = 1;
+       vendingMachine.insertCoin("dime");
+       expect(vendingMachine.currentAmount).toBe(1.10);
+    });
+
 });
