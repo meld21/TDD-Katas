@@ -26,18 +26,20 @@ describe("accepts only valid coins", function(){
 
 });
 
-describe("adds an inserted coins value to the current amount", function(){
+describe("adds an inserted coin's value to the current amount", function(){
 
+    var vendingMachine;
+    beforeEach(function(){
+        vendingMachine = new VendingMachine();
+    });
     it("adds .25 when quarter inserted currentAmount .25", function(){
        var coin = "quarter";
-       var vendingMachine = new VendingMachine();
        vendingMachine.insertCoin(coin);
        expect(vendingMachine.currentAmount).toBe(.25);
     });
 
     it("adds .25 when quarter inserted currentAmount 1.25", function(){
         var coin = "quarter";
-        var vendingMachine = new VendingMachine();
         vendingMachine.currentAmount = 1;
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(1.25);
@@ -45,35 +47,31 @@ describe("adds an inserted coins value to the current amount", function(){
     });
     it("add .1 when dime inserted currentAmount 1.10", function(){
        var coin = "dime";
-       var vendingMachine = new VendingMachine();
        vendingMachine.currentAmount = 1;
        vendingMachine.insertCoin("dime");
        expect(vendingMachine.currentAmount).toBe(1.10);
     });
     it("adds .1 when dime inserted currentAmount .1", function(){
         var coin = "dime";
-        var vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(.1);
     });
     it("adds .05 when nickel inserted currentAmount .05", function(){
         var coin = "nickel";
-        var vendingMachine = new VendingMachine();
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(.05);
     });
     it("adds .05 when nickel inserted currentAmount 1.05", function () {
         var coin = "nickel";
-        var vendingMachine = new VendingMachine();
         vendingMachine.currentAmount = 1;
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(1.05);
     });
     it("adds nothing when invalid penny is inserted currentAmount 0", function(){
        var coin = "penny";
-       var vendingMachine = new VendingMachine();
        vendingMachine.insertCoin(coin);
        expect(vendingMachine.currentAmount).toBe(0);
     });
+
 
 });
