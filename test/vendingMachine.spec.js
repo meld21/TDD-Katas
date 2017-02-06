@@ -56,5 +56,11 @@ describe("adds an inserted coins value to the current amount", function(){
         vendingMachine.insertCoin(coin);
         expect(vendingMachine.currentAmount).toBe(.1);
     });
+    it("adds .05 when nickel inserted currentAmount .05", function(){
+        var coin = "nickel";
+        var vendingMachine = new VendingMachine();
+        vendingMachine.insertCoin(coin);
+        expect(vendingMachine.currentAmount).toBe(.05);
+    });
 
 });
