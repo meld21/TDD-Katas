@@ -87,11 +87,17 @@ describe("messaged displays current amount or 'Insert Coin' when current amount 
     });
 });
 describe("invalid coins are placed in the return slot", function(){
-   it("inserted penny is placed in return slot", function(){
+   it("inserted penny is placed in return slot returnSlot ['penny']", function(){
        var coin = "penny";
        var vendingMachine = new VendingMachine();
        vendingMachine.insertCoin(coin);
        expect(vendingMachine.returnSlot).toEqual(["penny"]);
+   });
+   it("inserted nickel will not be placed in return slot returnSlot ['']", function(){
+       var coin = "nickel";
+       var vendingMachine = new VendingMachine();
+       vendingMachine.insertCoin(coin);
+       expect(vendingMachine.returnSlot).toEqual([]);
    });
 });
 

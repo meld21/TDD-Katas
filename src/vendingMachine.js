@@ -1,7 +1,7 @@
 function VendingMachine(){
 
     this.currentAmount = 0;
-    this.returnSlot = ["penny"];
+    this.returnSlot = [];
 
     this.acceptCoin = function(coin){
         if(coin == "quarter" || coin == "nickel" || coin == "dime")
@@ -14,10 +14,12 @@ function VendingMachine(){
     this.insertCoin = function(coin){
         if( coin == "quarter" )
             this.currentAmount += .25;
-        if( coin == "dime" )
+        else if( coin == "dime" )
             this.currentAmount += .1;
-        if( coin == "nickel" )
+        else if( coin == "nickel" )
             this.currentAmount += .05;
+        else
+            this.returnSlot = ["penny"];
     };
 
     this.displayMessage = function(){
