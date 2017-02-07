@@ -19,7 +19,7 @@ function VendingMachine(){
         else if( coin == "nickel" )
             this.currentAmount += .05;
         else
-            this.returnSlot = ["penny"];
+            this.returnSlot.push( "penny" );
     };
 
     this.displayMessage = function(){

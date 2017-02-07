@@ -99,6 +99,14 @@ describe("invalid coins are placed in the return slot", function(){
        vendingMachine.insertCoin(coin);
        expect(vendingMachine.returnSlot).toEqual([]);
    });
+   it("multiple inserted pennies will be placed in return slot returnSlot ['penny', 'penny', 'penny]", function(){
+      var penny = "penny";
+      var vendingMachine = new VendingMachine();
+       vendingMachine.insertCoin(penny);
+       vendingMachine.insertCoin(penny);
+       vendingMachine.insertCoin(penny);
+       expect(vendingMachine.returnSlot).toEqual(["penny", "penny", "penny"]);
+   });
 });
 
 });
